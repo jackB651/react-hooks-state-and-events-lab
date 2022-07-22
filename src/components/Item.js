@@ -5,7 +5,7 @@ function Item({ name, category }) {
   const [cart, setCart] = useState(false)
   
   const inCart = cart ? "Remove from cart" : "Add to Cart"
-
+  const cartClass = cart ? "in-cart":""
   
   function carted(){
     setCart((cart)=>!cart)
@@ -13,7 +13,7 @@ function Item({ name, category }) {
   
 
   return (
-    <li className={inCart}>
+    <li className={cartClass}>
       <span>{name}</span>
       <span className="category">{category}</span>
       <button className="add" onClick={carted}>{inCart}</button>
